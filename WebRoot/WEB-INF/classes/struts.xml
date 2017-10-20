@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"  
+    "http://struts.apache.org/dtds/struts-2.3.dtd"> 
+<struts>
+	<!-- 指定资源文件baseName文件为messageResource -->
+	<constant name="struts.custom.i18n.resources" value="messageResource"></constant>
+	<package name="struts2" extends="struts-default">
+		<action name="login" class="com.gxh.action.LoginAction">
+			<result name="success">/login_success.jsp</result>
+			<result name="failure">/login_failure.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="input" class="com.gxh.action.InputAction">
+			<result name="success">/demo/output.jsp</result>
+			<result name="input">/demo/input.jsp</result>
+		</action>
+		<action name="register" class="com.gxh.action.RegisterAction">
+			<result name="success">/demo2/result.jsp</result>
+			<result name="input">/register.jsp</result>
+		</action>
+		
+	</package>
+</struts>
