@@ -21,6 +21,7 @@ public class LoginAction extends ActionSupport {
 		this.password = password;
 	}
 	
+	//登录校验，输入合法性校验
 	public void validate(){	
 		super.validate(); 
 		//system.out.println(getUsername());
@@ -31,6 +32,8 @@ public class LoginAction extends ActionSupport {
 			this.addFieldError("password", getText("password.required"));
 		}
 	}
+	
+	//执行execute方法
 	public String execute(){
 		LoginCheck lc = new LoginCheck();
 		if(lc.isLogin(getUsername(), getPassword())){

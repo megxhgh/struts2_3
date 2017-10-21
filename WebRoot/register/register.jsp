@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -7,9 +7,8 @@
   </head>
   <body>
     <center>
-    	<%-- <s:actionerror/> --%>
-    	<h2>用户注册2</h2>
-    	<form action="register.action" method="post">
+    	<h2>用户注册</h2>
+    	<form action="register" method="post">
     		<table>
     			<tr>
     				<td>用户名：</td>
@@ -37,10 +36,8 @@
     			</tr>
     			<tr>
     				<td colspan="2" align="center"><input type="submit" value="注册"/></td>
-    			</tr>
-    			
+    			</tr>			
     		</table>
-    	
     	</form>
     </center>
   </body>

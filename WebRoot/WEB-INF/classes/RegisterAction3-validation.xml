@@ -4,10 +4,11 @@
         "-//Apache Struts//XWork Validator 1.0.2//EN"
         "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
 <validators>
+	<!-- 此验证无效，还未找到解决办法!!!!!! -->
 	<!-- username校验规则 -->
 	<field name="username">
 		<!-- username必须输入 -->
-		<field-validator type="requiredstring" short-circuit="true">	<!-- short-circuit校验短路 -->
+		<field-validator type="requiredstring" short-circuit="true"><!-- short-circuit校验短路 -->
 			<param name="trim">true</param>
 			<message>${getTest("username.required")}</message>
 		</field-validator>
@@ -20,12 +21,12 @@
 	
 	<!-- password校验规则 -->
 	<field name="password">
-		<!-- "password"必须输入 -->
+		<!-- password必须输入 -->
 		<field-validator type="requiredstring">
 			<param name="trim">true</param>
 			<message>${getTest("password.required")}</message>
 		</field-validator>
-		<!-- "password"长度必须为6-12个字符 -->
+		<!-- password长度必须为6-12个字符 -->
 		<field-validator type="regex">
 			<param name="expression"><![CDATA[(\w{6,20})]]></param>
 			<message>${getTest("password.rule")}</message>
@@ -69,6 +70,7 @@
 		</field-validator>
 	</field>
 	
+	<!-- email校验 -->
 	<field name="email">
 		<field-validator type="email">
 			<message>${getTest("email.rule")}</message>

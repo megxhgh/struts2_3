@@ -5,20 +5,38 @@
 <struts>
 	<!-- 指定资源文件baseName文件为messageResource -->
 	<constant name="struts.custom.i18n.resources" value="messageResource"></constant>
+	
 	<package name="struts2" extends="struts-default">
+		<!-- 登录处理 -->
 		<action name="login" class="com.gxh.action.LoginAction">
-			<result name="success">/login_success.jsp</result>
-			<result name="failure">/login_failure.jsp</result>
-			<result name="input">/login.jsp</result>
+			<result name="success">/login_success.jsp</result><!-- 登录成功-->
+			<result name="failure">/login_failure.jsp</result><!-- 登录失败 -->
+			<result name="input">/login.jsp</result><!-- 输入校验失败，返回登录页面 -->
 		</action>
+		
+		<!-- struts内建类型转换器 -->
 		<action name="input" class="com.gxh.action.InputAction">
 			<result name="success">/demo/output.jsp</result>
 			<result name="input">/demo/input.jsp</result>
 		</action>
+		
+		<!-- 1,传统表单注册 -->
 		<action name="register" class="com.gxh.action.RegisterAction">
-			<result name="success">/demo2/result.jsp</result>
-			<result name="input">/register.jsp</result>
+			<result name="success">/register_success.jsp</result>
+			<result name="input">/register/register.jsp</result>
 		</action>
 		
+		<!-- 2,struts表单注册，服务器端校验 -->
+		<action name="register2" class="com.gxh.action.RegisterAction2">
+			<result name="success">/register_success.jsp</result>
+			<result name="input">/register2ServerCheck/register2.jsp</result>
+		</action>
+		
+		<!-- 3,struts表单注册，客户端校验 -->
+		<action name="register3" class="com.gxh.action.RegisterAction3">
+			<result name="success">/register_success.jsp</result>
+			<result name="error">/register3ClientCheck/register3.jsp</result>
+			<result name="input">/register3ClientCheck/register3.jsp</result>
+		</action>
 	</package>
 </struts>

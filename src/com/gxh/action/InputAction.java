@@ -67,7 +67,8 @@ public class InputAction extends ActionSupport {
 	public void setNames(String[] names) {
 		this.names = names;
 	}
-
+	
+	//重写ActionSupport中的execute()方法
 	public String execute(){
 		return "success";
 	}

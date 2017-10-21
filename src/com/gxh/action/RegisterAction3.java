@@ -1,16 +1,18 @@
-package com.gxh.frameCheck;
+package com.gxh.action;
 
 import java.util.Date;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class Register extends ActionSupport{
+@SuppressWarnings("serial")
+public class RegisterAction3 extends ActionSupport{
 	private String username;
 	private String password;
 	private String repassword;
 	private int age;
 	private Date birth;
 	private String email;
+	
 	public String getUsername() {
 		return username;
 	}
@@ -48,7 +50,9 @@ public class Register extends ActionSupport{
 		this.email = email;
 	}
 	
-	public String execute(){
+	public String execute()throws Exception{
 		return SUCCESS;
 	}
+	
+	
 }
